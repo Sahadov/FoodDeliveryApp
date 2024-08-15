@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         var element = UILabel()
         element.text = "NEW LABEL"
         element.textColor = .white
-        element.font = .systemFont(ofSize: 40, weight: UIFont.Weight(rawValue: 20))
+        element.font = .Roboto.thinItalic.size(of: 40)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
