@@ -8,10 +8,26 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private lazy var titleLable: UILabel = {
+        var element = UILabel()
+        element.text = "NEW LABEL"
+        element.textColor = .white
+        element.font = .Roboto.thinItalic.size(of: 40)
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .blue
+        
+        view.addSubview(titleLable)
+        
+        NSLayoutConstraint.activate([
+            titleLable.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLable.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
     }
 
 
