@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     private lazy var titleLable: UILabel = {
         var element = UILabel()
         element.text = "NEW LABEL"
-        element.textColor = .white
+        element.textColor = Colors.black
         element.font = .Roboto.thinItalic.size(of: 40)
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        view.backgroundColor = Colors.accentOrange
         
         view.addSubview(titleLable)
         
