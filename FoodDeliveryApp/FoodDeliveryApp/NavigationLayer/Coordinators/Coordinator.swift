@@ -16,6 +16,8 @@ enum CoordinatorType {
     case profile
 }
 
+// MARK: - Coordinator Protocol
+
 protocol CoordinatorProtocol: AnyObject {
     var childCoordinators: [CoordinatorProtocol] { get set }
     var type: CoordinatorType { get }
@@ -25,6 +27,17 @@ protocol CoordinatorProtocol: AnyObject {
     func start()
     func finish()
 }
+
+extension CoordinatorProtocol {
+    func addChildCoordinator(_ childCoordinator: CoordinatorProtocol){
+        childCoordinators.append(childCoordinator)
+    }
+    func removeChildCoordinator(_ childCoordinator: CoordinatorProtocol){
+        childCoordinators = childCoordinators.filter{ $0 !== childCoordinator }
+    }
+}
+
+// MARK: - Coordinator Delegates
 
 protocol CoordinatorFinishDelegate: AnyObject {
     func coordinatorDidFinish(childCoordinator: CoordinatorProtocol)
