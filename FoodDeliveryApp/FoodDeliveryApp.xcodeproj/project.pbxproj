@@ -35,6 +35,9 @@
 		D16AE1192C6E6E45000F57A6 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D16AE10C2C6E6E45000F57A6 /* Roboto-Thin.ttf */; };
 		D16AE11A2C6E6E45000F57A6 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D16AE10D2C6E6E45000F57A6 /* Roboto-Black.ttf */; };
 		D16AE11D2C6E70E9000F57A6 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16AE11C2C6E70E9000F57A6 /* UIFont + Extension.swift */; };
+		D1938B5D2C76AF030004FF43 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1938B5C2C76AF030004FF43 /* OnboardingViewController.swift */; };
+		D1938B5F2C76AF930004FF43 /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1938B5E2C76AF930004FF43 /* OnboardingViewPresenter.swift */; };
+		D1AC70512C7F8492009A3F0B /* OnboardingPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AC70502C7F8491009A3F0B /* OnboardingPartViewController.swift */; };
 		D1ED21792C6EF8630083ED88 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ED21782C6EF8630083ED88 /* UIColor + Extension.swift */; };
 		D1ED217B2C6EF9A60083ED88 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ED217A2C6EF9A60083ED88 /* Colors.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +73,9 @@
 		D16AE10C2C6E6E45000F57A6 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		D16AE10D2C6E6E45000F57A6 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		D16AE11C2C6E70E9000F57A6 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
+		D1938B5C2C76AF030004FF43 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D1938B5E2C76AF930004FF43 /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
+		D1AC70502C7F8491009A3F0B /* OnboardingPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPartViewController.swift; sourceTree = "<group>"; };
 		D1ED21782C6EF8630083ED88 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		D1ED217A2C6EF9A60083ED88 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +141,7 @@
 		D16AE0E62C6E4F2E000F57A6 /* FoodDeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				D1938B5A2C76AEC90004FF43 /* UILayer */,
 				D1341B4D2C743DAE00272D3F /* NavigationLayer */,
 				D16AE0FE2C6E6E1F000F57A6 /* Resources */,
 				D16AE0E72C6E4F2E000F57A6 /* AppDelegate.swift */,
@@ -193,6 +200,24 @@
 				D1ED21782C6EF8630083ED88 /* UIColor + Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D1938B5A2C76AEC90004FF43 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				D1938B5B2C76AEDA0004FF43 /* Onboarding */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		D1938B5B2C76AEDA0004FF43 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D1938B5C2C76AF030004FF43 /* OnboardingViewController.swift */,
+				D1938B5E2C76AF930004FF43 /* OnboardingViewPresenter.swift */,
+				D1AC70502C7F8491009A3F0B /* OnboardingPartViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +313,10 @@
 				D1ED21792C6EF8630083ED88 /* UIColor + Extension.swift in Sources */,
 				D1341B532C74491E00272D3F /* AppCoordinator.swift in Sources */,
 				D1341B5F2C757B1B00272D3F /* ProfileCoordinator.swift in Sources */,
+				D1938B5F2C76AF930004FF43 /* OnboardingViewPresenter.swift in Sources */,
 				D16AE0E82C6E4F2E000F57A6 /* AppDelegate.swift in Sources */,
+				D1AC70512C7F8492009A3F0B /* OnboardingPartViewController.swift in Sources */,
+				D1938B5D2C76AF030004FF43 /* OnboardingViewController.swift in Sources */,
 				D1341B5B2C7579F500272D3F /* ListCoordinator.swift in Sources */,
 				D1341B592C7579D900272D3F /* OrderCoordinator.swift in Sources */,
 				D16AE0EA2C6E4F2E000F57A6 /* SceneDelegate.swift in Sources */,
