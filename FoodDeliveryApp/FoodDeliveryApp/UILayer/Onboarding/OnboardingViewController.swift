@@ -18,6 +18,7 @@ class OnboardingViewController: UIViewController {
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     private let pageControl = UIPageControl()
     weak var viewOutput: OnboardingViewOutput!
+    private let btmButton = UIButton()
     
     
     // MARK: - Initializers
@@ -36,6 +37,7 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         setupPageViewController()
         setupPageControl()
+        setupButton()
     }
 
 }
@@ -43,6 +45,8 @@ class OnboardingViewController: UIViewController {
 // MARK: - Layout
 private extension OnboardingViewController {
     func setupPageViewController(){
+        view.backgroundColor = Colors.accentOrange
+        
         pageViewController.delegate = self
         pageViewController.dataSource = self
         
@@ -68,6 +72,23 @@ private extension OnboardingViewController {
             pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
     }
+    func setupButton(){
+        view.addSubview(btmButton)
+        btmButton.translatesAutoresizingMaskIntoConstraints = false
+        btmButton.backgroundColor = Colors.background
+        btmButton.layer.cornerRadius = 18
+        btmButton.titleLabel?.font = .Roboto.bold.size(of: 20)
+        btmButton.setTitle("Next", for: .normal)
+        btmButton.setTitleColor(.darkGray, for: .normal)
+        
+        NSLayoutConstraint.activate([
+            btmButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            btmButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            btmButton.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -20),
+            btmButton.heightAnchor.constraint(equalToConstant: 50)
+            
+        ])
+    }
 }
 
 // MARK: - pageControlDidChange function
@@ -81,6 +102,7 @@ private extension OnboardingViewController {
         } else if selectedIndex < currentIndex {
             pageViewController.setViewControllers([pages[selectedIndex]], direction: .reverse, animated: true, completion: nil)
         }
+        updateButton()
     }
 }
 
@@ -106,8 +128,18 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
 
         if let index = pages.firstIndex(of: pendingViewControllers.first!) {
             pageControl.currentPage = index
+            updateButton()
         }
-
     }
-    
+}
+
+// MARK: - Update Button UI
+private extension OnboardingViewController {
+    func updateButton() {
+        if pageControl.currentPage == 3 {
+            btmButton.setTitle("Start Ordering", for: .normal)
+        } else {
+            btmButton.setTitle("Next", for: .normal)
+        }
+    }
 }
