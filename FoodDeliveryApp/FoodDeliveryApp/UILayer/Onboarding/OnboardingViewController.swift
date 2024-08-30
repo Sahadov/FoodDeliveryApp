@@ -17,7 +17,8 @@ class OnboardingViewController: UIViewController {
     // MARK: - Views
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     private let pageControl = UIPageControl()
-    weak var viewOutput: OnboardingViewOutput!
+    var viewOutput: OnboardingViewOutput!
+    private let btmButton = UIButton()
     
     
     // MARK: - Initializers
@@ -36,6 +37,7 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         setupPageViewController()
         setupPageControl()
+        setupButton()
     }
 
 }
@@ -43,6 +45,8 @@ class OnboardingViewController: UIViewController {
 // MARK: - Layout
 private extension OnboardingViewController {
     func setupPageViewController(){
+        view.backgroundColor = Colors.accentOrange
+        
         pageViewController.delegate = self
         pageViewController.dataSource = self
         
@@ -68,9 +72,27 @@ private extension OnboardingViewController {
             pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30)
         ])
     }
+    func setupButton(){
+        view.addSubview(btmButton)
+        btmButton.translatesAutoresizingMaskIntoConstraints = false
+        btmButton.backgroundColor = Colors.background
+        btmButton.layer.cornerRadius = 24
+        btmButton.titleLabel?.font = .Roboto.bold.size(of: 20)
+        btmButton.setTitle("Next", for: .normal)
+        btmButton.setTitleColor(.darkGray, for: .normal)
+        btmButton.addTarget(self, action: #selector(btmButtonTapped), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            btmButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            btmButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            btmButton.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -20),
+            btmButton.heightAnchor.constraint(equalToConstant: 50)
+            
+        ])
+    }
 }
 
-// MARK: - pageControlDidChange function
+// MARK: - Actions: pageControlDidChange amd btmButtonTapped
 private extension OnboardingViewController {
     @objc func pageControlDidChange(_ sender: UIPageControl) {
         let currentIndex = pageViewController.viewControllers?.first.flatMap { pages.firstIndex(of: $0) } ?? 0
@@ -81,6 +103,19 @@ private extension OnboardingViewController {
         } else if selectedIndex < currentIndex {
             pageViewController.setViewControllers([pages[selectedIndex]], direction: .reverse, animated: true, completion: nil)
         }
+        updateButton()
+    }
+    
+    @objc func btmButtonTapped(){
+        let currentIndex = pageViewController.viewControllers?.first.flatMap { pages.firstIndex(of: $0) } ?? 0
+        if currentIndex < pages.count - 1 {
+            pageViewController.setViewControllers([pages[currentIndex + 1]], direction: .forward, animated: true, completion: nil)
+            pageControl.currentPage = currentIndex + 1
+            updateButton()
+        } else {
+            viewOutput.onboardingFinish()
+        }
+        
     }
 }
 
@@ -106,8 +141,18 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
 
         if let index = pages.firstIndex(of: pendingViewControllers.first!) {
             pageControl.currentPage = index
+            updateButton()
         }
-
     }
-    
+}
+
+// MARK: - Update Button UI
+private extension OnboardingViewController {
+    func updateButton() {
+        if pageControl.currentPage == pages.count - 1 {
+            btmButton.setTitle("Start Ordering", for: .normal)
+        } else {
+            btmButton.setTitle("Next", for: .normal)
+        }
+    }
 }
