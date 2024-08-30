@@ -55,7 +55,7 @@ private extension OnboardingPartViewController {
         view.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50),
+            imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100),
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 200),
             imageView.heightAnchor.constraint(equalToConstant: 200)

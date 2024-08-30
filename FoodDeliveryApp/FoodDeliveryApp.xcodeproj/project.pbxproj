@@ -35,6 +35,7 @@
 		D16AE1192C6E6E45000F57A6 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D16AE10C2C6E6E45000F57A6 /* Roboto-Thin.ttf */; };
 		D16AE11A2C6E6E45000F57A6 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D16AE10D2C6E6E45000F57A6 /* Roboto-Black.ttf */; };
 		D16AE11D2C6E70E9000F57A6 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16AE11C2C6E70E9000F57A6 /* UIFont + Extension.swift */; };
+		D18115832C802C46003501B9 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18115822C802C46003501B9 /* UserStorage.swift */; };
 		D1938B5D2C76AF030004FF43 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1938B5C2C76AF030004FF43 /* OnboardingViewController.swift */; };
 		D1938B5F2C76AF930004FF43 /* OnboardingViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1938B5E2C76AF930004FF43 /* OnboardingViewPresenter.swift */; };
 		D1AC70512C7F8492009A3F0B /* OnboardingPartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AC70502C7F8491009A3F0B /* OnboardingPartViewController.swift */; };
@@ -73,6 +74,7 @@
 		D16AE10C2C6E6E45000F57A6 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		D16AE10D2C6E6E45000F57A6 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		D16AE11C2C6E70E9000F57A6 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
+		D18115822C802C46003501B9 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		D1938B5C2C76AF030004FF43 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D1938B5E2C76AF930004FF43 /* OnboardingViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPresenter.swift; sourceTree = "<group>"; };
 		D1AC70502C7F8491009A3F0B /* OnboardingPartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPartViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		D16AE0E62C6E4F2E000F57A6 /* FoodDeliveryApp */ = {
 			isa = PBXGroup;
 			children = (
+				D18115812C802C19003501B9 /* ServicesLayer */,
 				D1938B5A2C76AEC90004FF43 /* UILayer */,
 				D1341B4D2C743DAE00272D3F /* NavigationLayer */,
 				D16AE0FE2C6E6E1F000F57A6 /* Resources */,
@@ -200,6 +203,14 @@
 				D1ED21782C6EF8630083ED88 /* UIColor + Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D18115812C802C19003501B9 /* ServicesLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D18115822C802C46003501B9 /* UserStorage.swift */,
+			);
+			path = ServicesLayer;
 			sourceTree = "<group>";
 		};
 		D1938B5A2C76AEC90004FF43 /* UILayer */ = {
@@ -307,6 +318,7 @@
 				D16AE11D2C6E70E9000F57A6 /* UIFont + Extension.swift in Sources */,
 				D16AE0EC2C6E4F2E000F57A6 /* ViewController.swift in Sources */,
 				D1341B612C757BF600272D3F /* TabBarController.swift in Sources */,
+				D18115832C802C46003501B9 /* UserStorage.swift in Sources */,
 				D16AE0F22C6E4F2E000F57A6 /* FoodDeliveryApp.xcdatamodeld in Sources */,
 				D1ED217B2C6EF9A60083ED88 /* Colors.swift in Sources */,
 				D1341B572C7579BF00272D3F /* HomeCoordinator.swift in Sources */,
