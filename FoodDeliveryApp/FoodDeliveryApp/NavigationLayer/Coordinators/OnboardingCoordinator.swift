@@ -7,10 +7,13 @@
 
 import UIKit
 
+// MARK: - OnboardingCoordinator
 class OnboardingCoordinator: Coordinator {
     
+    // MARK: - Property
     private let factory = SceneFactory.self
     
+    // MARK: - Methods
     override func start() {
         showOnboarding()
     }
@@ -21,6 +24,7 @@ class OnboardingCoordinator: Coordinator {
     }
 }
 
+// MARK: - Navigation
 private extension OnboardingCoordinator {
     func showOnboarding(){
         let viewController = factory.makeOnboargingScene(coordinator: self)

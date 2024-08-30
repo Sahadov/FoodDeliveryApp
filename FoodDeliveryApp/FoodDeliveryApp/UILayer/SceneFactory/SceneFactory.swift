@@ -9,7 +9,13 @@ import UIKit
 
 struct SceneFactory {
     
-    // MARK: - Onboarding
+    // MARK: - Onboarding Flow
+    static func makeOnboardingFlow(coordinator: AppCoordinator, finishDelegate: CoordinatorFinishDelegate, navigationController: UINavigationController){
+        let onboardingCoordinator = OnboardingCoordinator(type: .onboarding, navigationController: navigationController, finishDelegate: finishDelegate)
+        coordinator.addChildCoordinator(onboardingCoordinator)
+        onboardingCoordinator.start()
+    }
+    
     static func makeOnboargingScene(coordinator: OnboardingCoordinator) -> OnboardingViewController {
         var pages = [UIViewController]()
         
@@ -42,5 +48,43 @@ struct SceneFactory {
         let viewController = OnboardingViewController(pages: pages, viewOutput: presenter)
         
         return viewController
+    }
+    
+    // MARK: - Main Flow
+    static func makeMainFlow(coordinator: AppCoordinator, finishDelegate: CoordinatorFinishDelegate) -> TabBarController {
+        
+        let homeNavigationController = UINavigationController()
+        let homeCoordinator = HomeCoordinator(type: .home, navigationController: homeNavigationController)
+        homeNavigationController.tabBarItem = UITabBarItem(title: "Home", image: UIImage.init(systemName: "scribble"), tag: 0)
+        homeCoordinator.finishDelegate = finishDelegate
+        homeCoordinator.start()
+        
+        let orderNavigationController = UINavigationController()
+        let orderCoordinator = OrderCoordinator(type: .order, navigationController: orderNavigationController)
+        orderNavigationController.tabBarItem = UITabBarItem(title: "Order", image: UIImage.init(systemName: "scribble"), tag: 1)
+        orderCoordinator.finishDelegate = finishDelegate
+        orderCoordinator.start()
+        
+        let listNavigationController = UINavigationController()
+        let listCoordinator = ListCoordinator(type: .list, navigationController: listNavigationController)
+        listNavigationController.tabBarItem = UITabBarItem(title: "List", image: UIImage.init(systemName: "scribble"), tag: 2)
+        listCoordinator.finishDelegate = finishDelegate
+        listCoordinator.start()
+        
+        let profileNavigationController = UINavigationController()
+        let profileCoordinator = ProfileCoordinator(type: .profile, navigationController: profileNavigationController)
+        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage.init(systemName: "scribble"), tag: 3)
+        profileCoordinator.finishDelegate = finishDelegate
+        profileCoordinator.start()
+        
+        coordinator.addChildCoordinator(homeCoordinator)
+        coordinator.addChildCoordinator(orderCoordinator)
+        coordinator.addChildCoordinator(listCoordinator)
+        coordinator.addChildCoordinator(profileCoordinator)
+        
+        let tabBarControllers = [homeNavigationController, orderNavigationController, listNavigationController, profileNavigationController]
+        let tabBarController = TabBarController(tabBarControllers: tabBarControllers)
+        
+        return tabBarController
     }
 }
