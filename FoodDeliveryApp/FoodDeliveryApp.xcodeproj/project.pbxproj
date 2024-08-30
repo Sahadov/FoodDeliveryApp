@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D124B2402C826E5100789EEC /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D124B23F2C826E5100789EEC /* SceneFactory.swift */; };
 		D1341B512C743E0E00272D3F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1341B502C743E0E00272D3F /* Coordinator.swift */; };
 		D1341B532C74491E00272D3F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1341B522C74491E00272D3F /* AppCoordinator.swift */; };
 		D1341B552C753D9A00272D3F /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1341B542C753D9A00272D3F /* OnboardingCoordinator.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D124B23F2C826E5100789EEC /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
 		D1341B502C743E0E00272D3F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D1341B522C74491E00272D3F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D1341B542C753D9A00272D3F /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D124B23E2C826E2F00789EEC /* SceneFactory */ = {
+			isa = PBXGroup;
+			children = (
+				D124B23F2C826E5100789EEC /* SceneFactory.swift */,
+			);
+			path = SceneFactory;
+			sourceTree = "<group>";
+		};
 		D1341B4D2C743DAE00272D3F /* NavigationLayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +226,7 @@
 		D1938B5A2C76AEC90004FF43 /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
+				D124B23E2C826E2F00789EEC /* SceneFactory */,
 				D1938B5B2C76AEDA0004FF43 /* Onboarding */,
 			);
 			path = UILayer;
@@ -325,6 +336,7 @@
 				D1ED21792C6EF8630083ED88 /* UIColor + Extension.swift in Sources */,
 				D1341B532C74491E00272D3F /* AppCoordinator.swift in Sources */,
 				D1341B5F2C757B1B00272D3F /* ProfileCoordinator.swift in Sources */,
+				D124B2402C826E5100789EEC /* SceneFactory.swift in Sources */,
 				D1938B5F2C76AF930004FF43 /* OnboardingViewPresenter.swift in Sources */,
 				D16AE0E82C6E4F2E000F57A6 /* AppDelegate.swift in Sources */,
 				D1AC70512C7F8492009A3F0B /* OnboardingPartViewController.swift in Sources */,
