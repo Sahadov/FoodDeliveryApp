@@ -14,11 +14,13 @@ class AppCoordinator: Coordinator {
     
     override func start() {
         // check if the onboarding has been already watched
-        if userStorage.passedOnboarding {
-            showMainFlow()
-        } else {
-            showOnboardingFlow()
-        }
+//        if userStorage.passedOnboarding {
+//            showMainFlow()
+//        } else {
+//            showOnboardingFlow()
+//        }
+        let loginVC = LoginViewController()
+        navigationController?.pushViewController(loginVC, animated: true)
     }
     
     override func finish() {
