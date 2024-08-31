@@ -14,4 +14,5 @@ enum Colors {
     static let background = UIColor().hex(0xE5E5E5)
     static let white = UIColor.white
     static let yellow = UIColor().hex(0xF7B643)
+    static let gray4 = UIColor.systemGray4
 }
