@@ -9,7 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    private let bottomView = BottomView()
+    private let bottomView = FDBottomView()
+    private let textField = FDTextField("Type your name")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class LoginViewController: UIViewController {
 private extension LoginViewController {
     func setupLayout(){
         setupBottomView()
+        setupTextField()
     }
     func setupBottomView(){
         view.addSubview(bottomView)
@@ -42,6 +44,17 @@ private extension LoginViewController {
             bottomView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             bottomView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             bottomView.heightAnchor.constraint(equalToConstant: 200)
+        ])
+    }
+    func setupTextField(){
+        view.addSubview(textField)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            textField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            textField.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            textField.heightAnchor.constraint(equalToConstant: 50),
+            textField.widthAnchor.constraint(equalToConstant: 300)
         ])
     }
 }
