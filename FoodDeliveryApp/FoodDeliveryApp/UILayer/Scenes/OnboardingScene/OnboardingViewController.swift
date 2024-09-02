@@ -17,8 +17,9 @@ class OnboardingViewController: UIViewController {
     // MARK: - Views
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     private let pageControl = UIPageControl()
+    private let btmButton = FDButton()
     var viewOutput: OnboardingViewOutput!
-    private let btmButton = UIButton()
+    
     
     
     // MARK: - Initializers
@@ -75,13 +76,9 @@ private extension OnboardingViewController {
     func setupButton(){
         view.addSubview(btmButton)
         btmButton.translatesAutoresizingMaskIntoConstraints = false
-        btmButton.backgroundColor = Colors.background
-        btmButton.layer.cornerRadius = 24
-        btmButton.titleLabel?.font = .Roboto.bold.size(of: 20)
-        btmButton.setTitle("Next", for: .normal)
-        btmButton.setTitleColor(.darkGray, for: .normal)
-        btmButton.addTarget(self, action: #selector(btmButtonTapped), for: .touchUpInside)
-        
+        btmButton.action = btmButtonTapped
+        btmButton.type = .grey
+
         NSLayoutConstraint.activate([
             btmButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             btmButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
@@ -150,9 +147,9 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
 private extension OnboardingViewController {
     func updateButton() {
         if pageControl.currentPage == pages.count - 1 {
-            btmButton.setTitle("Start Ordering", for: .normal)
+            btmButton.setTitle("Start Ordering")
         } else {
-            btmButton.setTitle("Next", for: .normal)
+            btmButton.setTitle("Next")
         }
     }
 }
