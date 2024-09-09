@@ -15,19 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="tLy-pS-sop">
-                                <rect key="frame" x="-53.666666666666657" y="176" width="500.33333333333326" height="500"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="26J-On-hxS"/>
-                                    <constraint firstAttribute="width" constant="500.32999999999998" id="OnI-cn-mBm"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="VSQ-IW-eiz">
+                                <rect key="frame" x="23" y="286" width="346" height="324"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.98950642349999995" green="0.86867302660000001" blue="0.34660840030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tLy-pS-sop" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="KMW-Od-fyL"/>
-                            <constraint firstItem="tLy-pS-sop" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xMk-kw-A54"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VSQ-IW-eiz" secondAttribute="trailing" constant="24" id="Iv5-7a-n0c"/>
+                            <constraint firstItem="VSQ-IW-eiz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="227" id="O9v-7c-86s"/>
+                            <constraint firstItem="VSQ-IW-eiz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="e5o-if-779"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VSQ-IW-eiz" secondAttribute="bottom" constant="208" id="gHV-jc-yrM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="onboarding" width="500" height="500"/>
+        <image name="launchScreen" width="300" height="300"/>
     </resources>
 </document>

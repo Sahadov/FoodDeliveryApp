@@ -39,6 +39,7 @@ class FDBottomView: UIView {
         self.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "or connect with"
+        label.textColor = Colors.btnBlue
         label.font = .Roboto.regular.size(of: 14)
         
         NSLayoutConstraint.activate([
@@ -49,7 +50,7 @@ class FDBottomView: UIView {
     }
     private func setupView1(){
         self.addSubview(view1)
-        view1.backgroundColor = Colors.gray4
+        view1.backgroundColor = Colors.btnBlue
         view1.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             view1.centerYAnchor.constraint(equalTo: label.centerYAnchor),
@@ -61,12 +62,12 @@ class FDBottomView: UIView {
     }
     private func setupView2(){
         self.addSubview(view2)
-        view2.image = UIImage(named: "wingsImage")
+        view2.image = UIImage(named: "btmImage2")
         view2.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            view2.topAnchor.constraint(equalTo: view1.bottomAnchor, constant: 5),
-            view2.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: -10),
+            view2.topAnchor.constraint(equalTo: view1.bottomAnchor, constant: 20),
+            view2.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
             view2.heightAnchor.constraint(equalToConstant: 200),
             view2.widthAnchor.constraint(equalToConstant: 220)
         ])
@@ -75,12 +76,15 @@ class FDBottomView: UIView {
     private func setupButton2(){
         self.addSubview(button2)
         button2.translatesAutoresizingMaskIntoConstraints = false
-        button2.setImage(UIImage(named: "google-plus"), for: .normal)
+        button2.setImage(UIImage(named: "google-plus1"), for: .normal)
         button2.addTarget(self, action: #selector(button2Tapped), for: .touchUpInside)
         NSLayoutConstraint.activate([
             button2.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
-            button2.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30)
+            button2.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            button2.widthAnchor.constraint(equalToConstant: 44),
+            button2.heightAnchor.constraint(equalToConstant: 44)
         ])
+        
         
     }
     private func setupButton1(){

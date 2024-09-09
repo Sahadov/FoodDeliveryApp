@@ -11,6 +11,8 @@ enum ButtonType {
     case white
     case orange
     case grey
+    case purple
+    case blue
 }
 
 class FDButton: UIView {
@@ -71,6 +73,12 @@ class FDButton: UIView {
         case .grey:
             button.backgroundColor = Colors.background
             button.setTitleColor(.darkGray, for: .normal)
+        case .purple:
+            button.backgroundColor = Colors.purple
+            button.setTitleColor(Colors.btnBlue, for: .normal)
+        case .blue:
+            button.backgroundColor = Colors.btnBlue
+            button.setTitleColor(Colors.bgWhite, for: .normal)
         }
     }
     
