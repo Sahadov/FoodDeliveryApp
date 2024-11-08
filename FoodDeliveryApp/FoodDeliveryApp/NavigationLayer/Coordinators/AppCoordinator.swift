@@ -14,11 +14,11 @@ class AppCoordinator: Coordinator {
     
     override func start() {
         // check if the onboarding has been already watched
-//        if userStorage.passedOnboarding {
-//            showMainFlow()
-//        } else {
-//            showOnboardingFlow()
-//        }
+        if userStorage.passedOnboarding {
+            showMainFlow()
+        } else {
+            showOnboardingFlow()
+        }
         
         let loginPresenter = LoginPresenter(coordinator: self)
         
@@ -33,6 +33,7 @@ class AppCoordinator: Coordinator {
     }
 }
 
+// MARK: - Navigation Methods
 private extension AppCoordinator {
     func showOnboardingFlow(){
         guard let navigationController = navigationController else { return }
@@ -46,6 +47,25 @@ private extension AppCoordinator {
         navigationController.pushViewController(tabBarController, animated: true)
         
     }
+    func showAuthFlow(){
+        guard let navigationController = navigationController else { return }
+        let vc = factory.makeAuthScene(coordinator: self)
+        navigationController.pushViewController(vc, animated: true)
+    }
+}
+
+// MARK: - Methods
+extension AppCoordinator {
+    func showLoginScene(){
+        guard let navigationController = navigationController else { return }
+        let vc = factory.makeLoginScene(coordinator: self)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    func showSignupScene(){
+        guard let navigationController = navigationController else { return }
+        let vc = factory.makeSignupScene(coordinator: self)
+        navigationController.pushViewController(vc, animated: true)
+    }
 }
 
 extension AppCoordinator: CoordinatorFinishDelegate {
@@ -57,7 +77,7 @@ extension AppCoordinator: CoordinatorFinishDelegate {
             return
         case .onboarding:
             navigationController?.viewControllers.removeAll()
-            showMainFlow()
+            showAuthFlow()
         default:
             navigationController?.popToRootViewController(animated: false)
         }

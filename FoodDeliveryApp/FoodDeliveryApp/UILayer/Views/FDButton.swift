@@ -48,8 +48,8 @@ class FDButton: UIView {
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
-            button.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30),
+            button.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             button.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
             button.heightAnchor.constraint(equalToConstant: 50)
         ])

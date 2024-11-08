@@ -144,7 +144,6 @@
 				D124B2462C82CAEC00789EEC /* Presenters */,
 				D124B2452C82CAE500789EEC /* Controllers */,
 				D124B2442C82CADF00789EEC /* Views */,
-				D124B2422C82CA3B00789EEC /* LoginViewController.swift */,
 			);
 			path = AuthScene;
 			sourceTree = "<group>";
@@ -161,6 +160,7 @@
 		D124B2452C82CAE500789EEC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D124B2422C82CA3B00789EEC /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

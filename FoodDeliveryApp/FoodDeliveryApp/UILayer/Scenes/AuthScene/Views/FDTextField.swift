@@ -21,9 +21,10 @@ class FDTextField: UITextField {
     
     func setupLayout(placeholderText: String?){
         self.layer.cornerRadius = 24
-        self.backgroundColor = Colors.grey
+        self.backgroundColor = Colors.btnCream
         self.font = .Roboto.regular.size(of: 16)
         self.placeholder = placeholderText
+        self.tintColor = .black
         
         // add paddings to the textfield
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: self.frame.height))
